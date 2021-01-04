@@ -24,6 +24,13 @@ struct treeNode
         this->value = value;
         this->height = 1;
     }
+    ~treeNode()
+    {
+        this->left = NULL;
+        this->right = NULL;
+        this->value = 0;
+        this->height = 0;
+    }
 };
 
 
@@ -124,7 +131,6 @@ private: void print2 (int level, treeNode* n)
         print2(level + 1, n->left);
         for (int i = 0; i < level; i++)
         { std::cout << "  "; }
-        
         std::cout << n->value << std::endl;
         print2(level + 1, n->right);
         
