@@ -43,6 +43,11 @@ struct avlTree
         root = NULL;
     }
     
+    ~avlTree()
+    {
+        root = NULL;
+    }
+    
     int getMax(int a, int b)
     {
         if (a > b) return a;
@@ -83,7 +88,7 @@ struct avlTree
         
         return tmp;
     }
-
+    
 public: void addNode (int value)
     {
         root = addNode(root, value);
@@ -147,11 +152,8 @@ private: void print3 (int level, treeNode* n)
         
         std::cout << n->value << std::endl;
         print3(level + 1, n->left);
-        
-        
     }
-
-
+    
 private: void print4(int level, treeNode * n, /*std::ostream & os*/ std::string & str)
     {
         if (!n) return;
@@ -325,24 +327,24 @@ private: treeNode* deleteNode(treeNode* n, int value)
 
 int main ()
 {
-    int k = 0;
+    int k,l = 0;
     avlTree * tree = new avlTree();
     for (int i = 1; i <= 14 ; i++)
     {
         tree->addNode(i);
         tree->print4();
     }
-    std::cout << "Enter element: ";
-    std::cin >> k;
-    tree->deleteNode(k);
-    tree->print4();
-    std::cout << "Enter element: ";
-    std::cin >> k;
-    tree->deleteNode(k);
-    tree->print4();
-    std::cout << "Enter element: ";
-    std::cin >> k;
-    tree->deleteNode(k);
-    tree->print4();
+    std::cout << "If you won't delete element turn 1" << std::endl;
+    std::cin >> l;
+    while (l==1)
+    {
+        std::cout << "Enter element: ";
+        std::cin >> k;
+        tree->deleteNode(k);
+        tree->print4();
+        std::cout << "If you won't continue turn 1, else turn any other value" << std::endl;
+        std::cin >> l;
+    }
+    delete tree;
     return 0;
 }
