@@ -327,36 +327,11 @@ int main ()
 {
     int k = 0;
     avlTree * tree = new avlTree();
-    tree->addNode (0);
-    tree->print4();
-    tree->addNode (1);
-    tree->print4();
-    tree->addNode (2);
-    tree->print4();
-    tree->addNode (3);
-    tree->print4();
-    tree->addNode (4);
-    tree->print4();
-    tree->addNode (5);
-    tree->print4();
-    tree->addNode (6);
-    tree->print4();
-    tree->addNode (7);
-    tree->print4();
-    tree->addNode (8);
-    tree->print4();
-    tree->addNode (9);
-    tree->print4();
-    tree->addNode (10);
-    tree->print4();
-    tree->addNode (11);
-    tree->print4();
-    tree->addNode (12);
-    tree->print4();
-    tree->addNode (13);
-    tree->print4();
-    tree->addNode (14);
-    tree->print4();
+    for (int i = 1; i <= 14 ; i++)
+    {
+        tree->addNode(i);
+        tree->print4();
+    }
     std::cout << "Enter element: ";
     std::cin >> k;
     tree->deleteNode(k);
