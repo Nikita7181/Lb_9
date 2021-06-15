@@ -46,6 +46,12 @@ struct avlTree
         root = nullptr;
     }
     
+    ~avlTree()
+    {
+        
+        root = emptyTree(root);
+    }
+    
     treeNode <T2>* emptyTree(treeNode <T2>* n)
     {
         
@@ -59,12 +65,6 @@ struct avlTree
         n->right = nullptr;
         
         return nullptr;
-    }
-    
-    ~avlTree()
-    {
-        
-        root = emptyTree(root);
     }
     
     int getMax(int a, int b)
